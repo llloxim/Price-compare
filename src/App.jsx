@@ -1,16 +1,15 @@
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
 
-import './App.css'
 function App() {
-
   return (
-    <>
-      <div>
-        <label htmlFor="name">Search : </label>
-        <input type="text" id="name" name="name" minLength="1"  size="10" />
-      </div>
-      <button> enter </button>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
