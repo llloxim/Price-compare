@@ -23,9 +23,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-// DELETE a joke
-router.delete("/:id", (req, res) => {
-  // TODO
-});
-
 module.exports = router;
