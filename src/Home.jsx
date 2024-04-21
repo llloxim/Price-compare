@@ -6,7 +6,7 @@ import SearchResultsList from "./components/HomeComponents/SearchResultsList";
 
 function Home() {
   const [searchResults, setSearchResults] = useState([]);
-
+  if(searchResults === []) setSearchResults(["test"]);
   return (
     <>
       <Navbar />
@@ -33,8 +33,7 @@ function Home() {
           </div>
         </div>
 
-        <Search setSearchResults={setSearchResults} />
-        <SearchResultsList results={searchResults} />
+        <Search setSearchResults={setSearchResults} results={searchResults}/>
       </div>
     </>
   );
