@@ -3,10 +3,13 @@ import JokeOfTheDay from "./components/HomeComponents/JokeOfTheDay";
 import Search from "./components/HomeComponents/Search";
 import { useState } from "react";
 import SearchResultsList from "./components/HomeComponents/SearchResultsList";
+import AddJoke from "./components/HomeComponents/AddJoke";
+import ViewJokes from "./components/HomeComponents/ViewJokes";
 
 function Home() {
   const [searchResults, setSearchResults] = useState([]);
-  if(searchResults === []) setSearchResults(["test"]);
+  const [selectedComponent, setSelectedComponent] = useState("search");
+
   return (
     <>
       <Navbar />
@@ -33,7 +36,15 @@ function Home() {
           </div>
         </div>
 
-        <Search setSearchResults={setSearchResults} results={searchResults}/>
+        {selectedComponent === "search" && (
+          <Search setSearchResults={setSearchResults} />
+        )}
+        {selectedComponent === "search" && (
+          <SearchResultsList results={searchResults} />
+        )}
+
+        {selectedComponent === "viewAll" && <ViewJokes />}
+        {selectedComponent === "add" && <AddJoke />}
       </div>
     </>
   );
