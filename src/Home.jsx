@@ -37,10 +37,7 @@ function Home() {
         </div>
 
         {selectedComponent === "search" && (
-          <Search setSearchResults={setSearchResults} />
-        )}
-        {selectedComponent === "search" && (
-          <SearchResultsList results={searchResults} />
+          <Search results={searchResults} setSearchResults={setSearchResults} />
         )}
 
         {selectedComponent === "viewAll" && <ViewJokes />}
