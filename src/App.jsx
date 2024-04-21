@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <div>
-        <label for="name">Search : </label>
-        <input type="text" id="name" name="name" required minlength="1"  size="10" />
+        <label form="name">Search : </label>
+        <input type="text" id="name" name="name" required minLength="1" size="10" />
       </div>
       <button> enter </button>
     </>
